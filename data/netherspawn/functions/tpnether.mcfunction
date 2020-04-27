@@ -1,0 +1,1 @@
+execute in minecraft:the_netherspawn run function netherspawn:locateportal
