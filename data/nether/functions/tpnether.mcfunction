@@ -1,0 +1,1 @@
+execute in minecraft:the_nether run function nether:doit
