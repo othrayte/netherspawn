@@ -28,4 +28,34 @@ function netherspawn:choose_spawn_x
 function netherspawn:choose_spawn_x
 function netherspawn:choose_spawn_x
 function netherspawn:choose_spawn_x
-execute as @e[tag=nether_spawnpoint_tester] at @s run teleport ~-30 ~ ~1
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+function netherspawn:choose_spawn_x
+execute as @e[tag=nether_spawnpoint_tester] at @s run teleport ~-60 ~ ~1

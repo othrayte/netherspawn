@@ -30,6 +30,36 @@ function netherspawn:choose_spawn_z
 function netherspawn:choose_spawn_z
 function netherspawn:choose_spawn_z
 function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
+function netherspawn:choose_spawn_z
 
 kill @e[tag=nether_spawnpoint_tester]
 
