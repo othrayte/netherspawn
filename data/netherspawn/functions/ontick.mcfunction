@@ -1,5 +1,6 @@
 scoreboard objectives add netherspawn dummy
-#execute as @p at @p run function netherspawn:estimate_portal_location
+execute as @p at @p run function netherspawn:estimate_portal_location
+#execute as @p at @p run function netherspawn:trilaterate
 #execute unless score setup netherspawn matches 1 run scoreboard players add timeout netherspawn 100
 #execute unless score setup netherspawn matches 1 run scoreboard players add setup netherspawn 1
 #execute if score timeout netherspawn matches 0 run scoreboard players add timeout netherspawn 100

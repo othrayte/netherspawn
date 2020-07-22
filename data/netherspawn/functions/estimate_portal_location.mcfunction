@@ -14,42 +14,26 @@
 # in reality we multiply the numerator by 500 and skip the 2 in the denominator
 
 scoreboard objectives add epl dummy
-scoreboard players set fiveh epl 500
+execute unless score a epl matches 1..512 run scoreboard players set a epl 64
+
 # Get 'a', 'b', and 'c'
 scoreboard objectives add trilaterate dummy
 scoreboard players operation a trilaterate = a epl
 scoreboard players set theta trilaterate 0
-kill @e[tag=epl_cursor]
+
+#scoreboard players reset d epl
 
 # Locate based on +64
-kill @e[tag=epl_probe_1]
-kill @e[tag=epl_probe_2]
-execute at @s run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["epl_probe_1"]}
-execute at @s run summon minecraft:armor_stand ~ ~ ~64 {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["epl_probe_2"]}
-execute as @e[tag=epl_probe_1] at @s store result score b trilaterate run locate ruined_portal
-execute as @e[tag=epl_probe_2] at @s store result score c trilaterate run locate ruined_portal
-
 function netherspawn:trilaterate
 
-tag @e[tag=trilaterate_a] add epl_cursor
-tag @e[tag=trilaterate_a] remove trilaterate_a
-tag @e[tag=trilaterate_b] add epl_cursor
-tag @e[tag=trilaterate_b] remove trilaterate_b
+execute if score d trilaterate matches ..15 run scoreboard players operation d epl = d trilaterate
+execute if score d trilaterate matches ..15 run scoreboard players operation x epl = x trilaterate
+execute if score d trilaterate matches ..15 run scoreboard players operation z epl = z trilaterate
 
 # Locate based on -64
-kill @e[tag=epl_probe_1]
-kill @e[tag=epl_probe_2]
-execute at @s run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["epl_probe_1"]}
-execute at @s run summon minecraft:armor_stand ~ ~ ~-64 {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["epl_probe_2"]}
-execute as @e[tag=epl_probe_1] at @s store result score b trilaterate run locate ruined_portal
-execute as @e[tag=epl_probe_2] at @s store result score c trilaterate run locate ruined_portal
+scoreboard players set theta trilaterate -180000
+execute unless score d trilaterate matches ..15 run function netherspawn:trilaterate
 
-scoreboard players set theta trilaterate -180
-function netherspawn:trilaterate
-
-tag @e[tag=trilaterate_a] add epl_cursor
-tag @e[tag=trilaterate_a] remove trilaterate_a
-tag @e[tag=trilaterate_b] add epl_cursor
-tag @e[tag=trilaterate_b] remove trilaterate_b
-
-execute as @e[tag=epl_cursor] run data modify entity @s Invisible set value 0
+execute if score d trilaterate matches ..15 run scoreboard players operation d epl = d trilaterate
+execute if score d trilaterate matches ..15 run scoreboard players operation x epl = x trilaterate
+execute if score d trilaterate matches ..15 run scoreboard players operation z epl = z trilaterate
