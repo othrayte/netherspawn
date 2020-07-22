@@ -16,70 +16,40 @@
 scoreboard objectives add epl dummy
 scoreboard players set fiveh epl 500
 # Get 'a', 'b', and 'c'
-scoreboard players set a epl 64
-kill @e[tag=portal_cursor_1]
-kill @e[tag=portal_cursor_2]
-execute at @s run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["portal_cursor_1"]}
-execute at @s run summon minecraft:armor_stand ~ ~ ~64 {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["portal_cursor_2"]}
-execute as @e[tag=portal_cursor_1] at @s store result score b epl run locate ruined_portal
-execute as @e[tag=portal_cursor_2] at @s store result score c epl run locate ruined_portal
+scoreboard objectives add trilaterate dummy
+scoreboard players operation a trilaterate = a epl
+scoreboard players set theta trilaterate 0
+kill @e[tag=epl_cursor]
 
-# Calc squares
-scoreboard players operation a2 epl = a epl
-scoreboard players operation a2 epl *= a epl
-scoreboard players operation b2 epl = b epl
-scoreboard players operation b2 epl *= b epl
-scoreboard players operation c2 epl = c epl
-scoreboard players operation c2 epl *= c epl
+# Locate based on +64
+kill @e[tag=epl_probe_1]
+kill @e[tag=epl_probe_2]
+execute at @s run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["epl_probe_1"]}
+execute at @s run summon minecraft:armor_stand ~ ~ ~64 {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["epl_probe_2"]}
+execute as @e[tag=epl_probe_1] at @s store result score b trilaterate run locate ruined_portal
+execute as @e[tag=epl_probe_2] at @s store result score c trilaterate run locate ruined_portal
 
-# Calc numerator
-scoreboard players operation num epl = a2 epl
-scoreboard players operation num epl += b2 epl
-scoreboard players operation num epl -= c2 epl
-scoreboard players operation num epl *= fiveh epl
+function netherspawn:trilaterate
 
-# Calc denominator
-scoreboard players operation den epl = a epl
-scoreboard players operation den epl *= b epl
+tag @e[tag=trilaterate_a] add epl_cursor
+tag @e[tag=trilaterate_a] remove trilaterate_a
+tag @e[tag=trilaterate_b] add epl_cursor
+tag @e[tag=trilaterate_b] remove trilaterate_b
 
-# Calc cos(C)
-scoreboard players operation cosC epl = num epl
-scoreboard players operation cosC epl /= den epl
+# Locate based on -64
+kill @e[tag=epl_probe_1]
+kill @e[tag=epl_probe_2]
+execute at @s run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["epl_probe_1"]}
+execute at @s run summon minecraft:armor_stand ~ ~ ~-64 {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["epl_probe_2"]}
+execute as @e[tag=epl_probe_1] at @s store result score b trilaterate run locate ruined_portal
+execute as @e[tag=epl_probe_2] at @s store result score c trilaterate run locate ruined_portal
 
-# Calc C
-scoreboard objectives add acos dummy
-scoreboard players operation x acos = cosC epl
-function netherspawn:acos
-scoreboard players operation C epl = result acos
-scoreboard players operation C' epl = C epl
-scoreboard players operation C' epl -= C epl
-scoreboard players operation C' epl -= C epl
+scoreboard players set theta trilaterate -180
+function netherspawn:trilaterate
 
-# Spawn a cursor facing the portal, (need to check both directions!)
-kill @e[tag=portal_cursor_1]
-kill @e[tag=portal_cursor_2]
-execute at @s run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["portal_cursor_1"]}
-execute store result entity @e[tag=portal_cursor_1,limit=1] Rotation[0] float 0.001 run scoreboard players get C epl
-execute at @s run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["portal_cursor_2"]}
-execute store result entity @e[tag=portal_cursor_2,limit=1] Rotation[0] float 0.001 run scoreboard players get C' epl
-# and move forward 'b'
-scoreboard objectives add forward_n dummy
-scoreboard players operation n forward_n = b epl
-execute as @e[tag=portal_cursor_1] run function netherspawn:forward_n
-execute as @e[tag=portal_cursor_2] run function netherspawn:forward_n
+tag @e[tag=trilaterate_a] add epl_cursor
+tag @e[tag=trilaterate_a] remove trilaterate_a
+tag @e[tag=trilaterate_b] add epl_cursor
+tag @e[tag=trilaterate_b] remove trilaterate_b
 
-# Show some stands for debugging
-kill @e[tag=portal_debug_cursor_1]
-kill @e[tag=portal_debug_cursor_2]
-execute at @e[tag=portal_cursor_1] run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:0b,Tags:["portal_debug_cursor_1"]}
-execute at @e[tag=portal_cursor_2] run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:0b,Tags:["portal_debug_cursor_2"]}
-
-# Check result
-scoreboard objectives add epl_debug dummy
-execute store result score x1 epl_debug run data get entity @e[tag=portal_debug_cursor_1,limit=1] Pos[0]
-execute store result score z1 epl_debug run data get entity @e[tag=portal_debug_cursor_1,limit=1] Pos[2]
-execute store result score x2 epl_debug run data get entity @e[tag=portal_debug_cursor_2,limit=1] Pos[0]
-execute store result score z2 epl_debug run data get entity @e[tag=portal_debug_cursor_2,limit=1] Pos[2]
-execute store result score d epl_debug run locate ruined_portal
-execute as @e[tag=portal_debug_cursor_1] at @s store result score d1 epl_debug run locate ruined_portal
-execute as @e[tag=portal_debug_cursor_2] at @s store result score d2 epl_debug run locate ruined_portal
+execute as @e[tag=epl_cursor] run data modify entity @s Invisible set value 0
