@@ -15,6 +15,8 @@
 
 scoreboard objectives add epl dummy
 execute unless score a epl matches 1..512 run scoreboard players set a epl 64
+scoreboard players set x epl 0
+scoreboard players set z epl 0
 
 # Get 'a', 'b', and 'c'
 scoreboard objectives add trilaterate dummy
