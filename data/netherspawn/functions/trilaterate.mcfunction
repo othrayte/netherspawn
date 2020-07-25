@@ -11,6 +11,7 @@ execute unless score n trilaterate matches 0..17 run scoreboard players set n tr
 #  * entity tagged 'cursor_1' at candidate location 1
 #  * entity tagged 'cursor_2' at candidate location 2
 
+scoreboard objectives add distance_to dummy
 scoreboard players operation n distance_to = n trilaterate
 
 # Create 2 cursors, at '1' and '2'

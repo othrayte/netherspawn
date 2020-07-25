@@ -20,6 +20,8 @@ scoreboard players operation x hone_chunk -= x' hone_chunk
 scoreboard players operation z hone_chunk -= z' hone_chunk
 
 # Test 3x3 chunks
+scoreboard objectives add distance_to dummy
+scoreboard players operation n distance_to = n hone_chunk
 kill @e[tag=cursor]
 summon minecraft:armor_stand 0 0 0 {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["cursor"]}
 execute as @e[tag=cursor] run function netherspawn:hone_chunk_impl
