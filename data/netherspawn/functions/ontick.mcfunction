@@ -1,4 +1,5 @@
 scoreboard objectives add netherspawn dummy
+scoreboard objectives add netherspawndead deathCount
 # spawnstate:
 #  0: Initial
 #  1: Spawn chunk located
@@ -13,3 +14,4 @@ execute if score spawnstate netherspawn matches 1 in minecraft:the_nether run fu
 execute if score spawnstate netherspawn matches 2 in minecraft:the_nether run function netherspawn:check_valid_spawns
 execute if score spawnstate netherspawn matches 3 in minecraft:the_nether run function netherspawn:mark_recovered
 execute if score spawnstate netherspawn matches 4 in minecraft:the_nether run function netherspawn:tp_new_players
+execute if score spawnstate netherspawn matches 4 in minecraft:the_nether run function netherspawn:respawn_dead_players
