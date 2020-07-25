@@ -1,4 +1,4 @@
-functionn netherspawn:reset
+function netherspawn:reset
 
 execute in minecraft:the_nether run forceload remove all
 
