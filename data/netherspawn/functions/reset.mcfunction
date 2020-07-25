@@ -9,10 +9,3 @@ scoreboard objectives remove forward_n
 scoreboard objectives remove locatechest_y
 scoreboard objectives remove debug_trilat
 scoreboard objectives remove netherspawn
-
-execute in minecraft:the_nether run forceload remove all
-
-scoreboard objectives add netherspawn dummy
-scoreboard objectives setdisplay sidebar netherspawn
-scoreboard players set debug netherspawn 1
-#scoreboard players set spawnstate netherspawn 99
