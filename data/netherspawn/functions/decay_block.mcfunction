@@ -23,6 +23,7 @@ execute if block ~ ~ ~ minecraft:polished_blackstone_bricks run setblock ~ ~ ~ m
 
 execute if block ~ ~ ~ minecraft:polished_blackstone_slab[type=top] run setblock ~ ~ ~ minecraft:blackstone_slab[type=top] replace
 execute if block ~ ~ ~ minecraft:polished_blackstone_slab[type=bottom] run setblock ~ ~ ~ minecraft:blackstone_slab[type=bottom] replace
+execute if block ~ ~ ~ minecraft:polished_blackstone_slab[type=double] run setblock ~ ~ ~ minecraft:polished_blackstone_slab[type=bottom] replace
 
 execute if block ~ ~ ~ minecraft:polished_blackstone_stairs[facing=north] run setblock ~ ~ ~ minecraft:blackstone_stairs[facing=north] replace
 execute if block ~ ~ ~ minecraft:polished_blackstone_stairs[facing=south] run setblock ~ ~ ~ minecraft:blackstone_stairs[facing=south] replace
