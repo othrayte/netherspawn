@@ -1,2 +1,2 @@
-say I respawned
+execute if score debug netherspawn matches 1 run tellraw @a [{"text": "[NetherSpawn] "},{"text": "DEBUG", "color":"#BE90D4"},{"text":": Player respawned: "}, {"selector":"@s"}]
 execute unless data entity @s SpawnForced run function netherspawn:respawn_player
