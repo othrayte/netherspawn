@@ -21,16 +21,5 @@ execute at @s positioned ~ ~1 ~ run function netherspawn:test_spawn_locations_y
 execute at @s positioned ~ ~2 ~ run function netherspawn:test_spawn_locations_y
 execute at @s positioned ~ ~3 ~ run function netherspawn:test_spawn_locations_y
 execute at @s positioned ~ ~4 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~5 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~6 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~7 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~8 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~9 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~10 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~11 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~12 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~13 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~14 ~ run function netherspawn:test_spawn_locations_y
-execute at @s positioned ~ ~15 ~ run function netherspawn:test_spawn_locations_y
 
 kill @s
