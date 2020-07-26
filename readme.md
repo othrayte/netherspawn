@@ -13,6 +13,14 @@ This datapack is currently in alpha and needs some more play testing. Please try
  * Each time a player respawns (i.e. not the initial spawn) at the ruined portal it degrades
  * If the ruined portal is let decay too far the next clostest portal will be used
 
+## Usage
+
+Requires Minecraft 1.16.
+
+Add the datapack when creating a new world. See the GIF below. Enjoy.
+
+![Gif showing adding the datapack when creating a new world in minecraft.](usage.gif)
+
 ## Known issues
 
 The following is a list of known issues, if you encounter these feel free to let me know so I know which ones to fix first.
