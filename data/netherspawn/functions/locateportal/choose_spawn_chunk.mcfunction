@@ -1,3 +1,4 @@
+execute unless score spawnattempts netherspawn matches 1.. run tellraw @a [{"text": "[NetherSpawn] "},{"text": "INFO", "color":"#FFD700"},{"text": ": Locating a spawn location in the nether."}]
 execute if score debug netherspawn matches 1 run tellraw @a [{"text": "[NetherSpawn] "},{"text": "DEBUG", "color":"#BE90D4"},{"text": ": Searching for a ruined portal in the nether near [0, 0]"}]
 
 forceload add 0 0 0 0
