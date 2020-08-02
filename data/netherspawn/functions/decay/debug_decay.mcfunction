@@ -1,4 +1,4 @@
-function netherspawn:decay/enumerate_portal_blocks
+function netherspawn:decay/enumerate_decayable_blocks
 teleport @e[tag=decay_cursor] ~ -999 ~
 kill @e[tag=decay_cursor]
 #tag @e[tag=portal_decay_block,sort=random,limit=2] add block_to_decay

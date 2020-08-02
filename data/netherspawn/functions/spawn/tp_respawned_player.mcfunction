@@ -1,4 +1,4 @@
-execute in minecraft:the_nether run function netherspawn:spawn/enumerate_spawning_locations
+execute in minecraft:the_nether run function netherspawn:spawn/enumerate_spawnable_locations
 execute in minecraft:the_nether run teleport @s @e[tag=valid_spawn_location, sort=random, limit=1]
 execute if entity @e[tag=valid_spawn_location] as @s at @s run spawnpoint
 execute if entity @e[tag=valid_spawn_location] run scoreboard players reset @s netherspawndead
