@@ -1,5 +1,7 @@
 # Netherspawn
 
+![Netherspawn logo. A player standing in a ruined nether portal, raising a golden sword.](logo/netherspawn-title-256.png)
+
 This is a datapack for Minecraft 1.16 that spawns the player into the nether at one of the ruined portals.
 
 _Will you thrive in the nether, or strive to escape it!_
