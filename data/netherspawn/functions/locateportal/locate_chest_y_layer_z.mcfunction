@@ -1,6 +1,6 @@
-scoreboard objectives add locate_chest_y dummy
+scoreboard objectives add ns_locatechesty dummy
 
-scoreboard players reset chest_located locate_chest_y
+scoreboard players reset chest_located ns_locatechesty
 execute positioned ~ ~ ~ run function netherspawn:locateportal/locate_chest_y_layer_x
 execute positioned ~ ~ ~1 run function netherspawn:locateportal/locate_chest_y_layer_x
 execute positioned ~ ~ ~2 run function netherspawn:locateportal/locate_chest_y_layer_x

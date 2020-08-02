@@ -1,4 +1,4 @@
-scoreboard objectives add acos dummy
+scoreboard objectives add ns_arccos dummy
 
 # degrees(acos(x)-π/2) = degrees((-939x + 922x³) / (1000 + -1285x² + 296x⁴))
 #                      = 180 * ((-939x + 922x³) / (1000 + -1285x² + 296x⁴)) / PI
@@ -27,44 +27,44 @@ scoreboard objectives add acos dummy
 #                    s = x^3/1000
 #                    t = 1019x
 
-scoreboard players set A acos 718
-scoreboard players set B acos 778458
-scoreboard players set C acos 4345
-scoreboard players set D acos 1019
-scoreboard players set KPI acos 3142
-scoreboard players set K180 acos 180000
-scoreboard players set HPI acos 1571
-scoreboard players set ONEK acos 1000
+scoreboard players set A ns_arccos 718
+scoreboard players set B ns_arccos 778458
+scoreboard players set C ns_arccos 4345
+scoreboard players set D ns_arccos 1019
+scoreboard players set KPI ns_arccos 3142
+scoreboard players set K180 ns_arccos 180000
+scoreboard players set HPI ns_arccos 1571
+scoreboard players set ONEK ns_arccos 1000
 
-scoreboard players operation x2 acos = x acos
-scoreboard players operation x2 acos *= x acos
+scoreboard players operation x2 ns_arccos = x ns_arccos
+scoreboard players operation x2 ns_arccos *= x ns_arccos
 
-scoreboard players operation x3 acos = x2 acos
-scoreboard players operation x3 acos *= x acos
+scoreboard players operation x3 ns_arccos = x2 ns_arccos
+scoreboard players operation x3 ns_arccos *= x ns_arccos
 
-scoreboard players operation s acos = x3 acos
-scoreboard players operation s acos /= ONEK acos
+scoreboard players operation s ns_arccos = x3 ns_arccos
+scoreboard players operation s ns_arccos /= ONEK ns_arccos
 
-scoreboard players operation t acos = D acos
-scoreboard players operation t acos *= x acos
+scoreboard players operation t ns_arccos = D ns_arccos
+scoreboard players operation t ns_arccos *= x ns_arccos
 
-scoreboard players operation num acos = s acos
-scoreboard players operation num acos -= t acos
-scoreboard players operation num acos *= A acos
+scoreboard players operation num ns_arccos = s ns_arccos
+scoreboard players operation num ns_arccos -= t ns_arccos
+scoreboard players operation num ns_arccos *= A ns_arccos
 
-scoreboard players operation den_3 acos = s acos
-scoreboard players operation den_3 acos *= x acos
-scoreboard players operation den_3 acos /= C acos
+scoreboard players operation den_3 ns_arccos = s ns_arccos
+scoreboard players operation den_3 ns_arccos *= x ns_arccos
+scoreboard players operation den_3 ns_arccos /= C ns_arccos
 
-scoreboard players operation den acos = B acos
-scoreboard players operation den acos -= x2 acos
-scoreboard players operation den acos += den_3 acos
+scoreboard players operation den ns_arccos = B ns_arccos
+scoreboard players operation den ns_arccos -= x2 ns_arccos
+scoreboard players operation den ns_arccos += den_3 ns_arccos
 
-scoreboard players operation result acos = num acos
-scoreboard players operation result acos /= den acos
-scoreboard players operation result acos += HPI acos
-scoreboard players operation result acos *= K180 acos
-scoreboard players operation result acos /= KPI acos
+scoreboard players operation result ns_arccos = num ns_arccos
+scoreboard players operation result ns_arccos /= den ns_arccos
+scoreboard players operation result ns_arccos += HPI ns_arccos
+scoreboard players operation result ns_arccos *= K180 ns_arccos
+scoreboard players operation result ns_arccos /= KPI ns_arccos
 
 # plot degrees(acos(floor(x)/1000)-π/2), floor(degrees((-939((floor(x)/1000) + 922*(floor(x)/1000)³) / (1000 + -1285*(floor(x)/1000)² + 296*(floor(x)/1000)⁴))), x=-1000 to 1000
 

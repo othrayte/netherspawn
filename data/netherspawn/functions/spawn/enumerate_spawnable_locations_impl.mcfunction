@@ -5,9 +5,9 @@ execute store result entity @s Pos[2] double 1 run scoreboard players get chunkz
 execute as @s at @s run teleport ~0.5 ~ ~0.5
 
 # Forceload the spawn chunk
-scoreboard objectives add forceload_chunk dummy
-scoreboard players operation x forceload_chunk = chunkx netherspawn
-scoreboard players operation z forceload_chunk = chunkz netherspawn
+scoreboard objectives add ns_forceldchunk dummy
+scoreboard players operation x ns_forceldchunk = chunkx netherspawn
+scoreboard players operation z ns_forceldchunk = chunkz netherspawn
 function netherspawn:util/forceload_chunk
 
 kill @e[tag=valid_spawn_location]

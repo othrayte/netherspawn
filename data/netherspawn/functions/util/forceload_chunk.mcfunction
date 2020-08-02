@@ -1,4 +1,4 @@
-scoreboard objectives add forceload_chunk dummy
+scoreboard objectives add ns_forceldchunk dummy
 # inputs:
 #  * x, chunk x (in blocks)
 #  * z, chunk y (in blocks)
