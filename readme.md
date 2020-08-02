@@ -38,3 +38,4 @@ The following is a list of known issues, if you encounter these feel free to let
  * Improve the portal search algorithm to allow checking more than one ruined portal per tick
  * Add custom sound effects when portal blocks degrade or break
  * More code cleanup
+ * Add trigger to allow reseting the datapack without cheats (add way to disable this for multiplayer servers)
