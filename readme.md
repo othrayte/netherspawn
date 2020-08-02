@@ -34,7 +34,7 @@ The following is a list of known issues, if you encounter these feel free to let
 
 ## TODO
 
- * Clean up the code, use consistent naming patterns
  * Clean up force loaded chunks when not required
  * Improve the portal search algorithm to allow checking more than one ruined portal per tick
  * Add custom sound effects when portal blocks degrade or break
+ * More code cleanup
