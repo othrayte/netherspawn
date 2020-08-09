@@ -14,4 +14,4 @@ execute if score spawnstate netherspawn matches 1 in minecraft:the_nether run fu
 execute if score spawnstate netherspawn matches 2 in minecraft:the_nether run function netherspawn:locateportal/check_valid_spawns
 execute if score spawnstate netherspawn matches 3 in minecraft:the_nether run function netherspawn:locateportal/mark_recovered
 execute if score spawnstate netherspawn matches 4 in minecraft:the_nether run function netherspawn:spawn/tp_new_players
-execute if score spawnstate netherspawn matches 4 in minecraft:the_nether run function netherspawn:deathevent/respawn_dead_players
+execute if score spawnstate netherspawn matches 4 in minecraft:the_nether run function netherspawn:deathevent/detect_death_events
